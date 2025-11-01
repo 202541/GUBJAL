@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 퀴즈 | Multiplication Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 언어 선택 버튼 -->
+        <div class="language-selector">
+            <button id="lang-ko" class="lang-btn active" onclick="changeLanguage('ko')">한국어</button>
+            <button id="lang-th" class="lang-btn" onclick="changeLanguage('th')">ไทย</button>
+        </div>
+
+        <!-- 메인 헤더 -->
+        <header>
+            <h1 id="title">구구단 퀴즈</h1>
+            <p id="subtitle">재미있게 구구단을 배워요!</p>
+        </header>
+
+        <!-- 시작 화면 -->
+        <div id="start-screen" class="screen">
+            <div class="welcome-box">
+                <div class="emoji">🎯</div>
+                <h2 id="welcome-text">환영합니다!</h2>
+                <p id="instruction">2단부터 9단까지 재미있는 구구단 퀴즈에 도전해보세요!</p>
+                <button id="start-btn" class="btn btn-large" onclick="startQuiz()">시작하기</button>
+            </div>
+        </div>
+
+        <!-- 퀴즈 화면 -->
+        <div id="quiz-screen" class="screen hidden">
+            <!-- 점수 표시 -->
+            <div class="score-board">
+                <div class="score-item">
+                    <span id="score-label">점수</span>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="score-item">
+                    <span id="question-counter-label">문제</span>
+                    <span id="question-counter" class="score-value">1/10</span>
+                </div>
+            </div>
+
+            <!-- 문제 영역 -->
+            <div class="question-box">
+                <div class="question-text">
+                    <span id="question" class="question-large">3 × 4 = ?</span>
+                </div>
+            </div>
+
+            <!-- 답변 버튼 -->
+            <div class="answers-grid" id="answers-grid">
+                <!-- 동적으로 생성됨 -->
+            </div>
+
+            <!-- 피드백 메시지 -->
+            <div id="feedback" class="feedback hidden"></div>
+        </div>
+
+        <!-- 결과 화면 -->
+        <div id="result-screen" class="screen hidden">
+            <div class="result-box">
+                <div class="emoji" id="result-emoji">🎉</div>
+                <h2 id="result-title">퀴즈 완료!</h2>
+                <div class="final-score">
+                    <p id="final-score-label">최종 점수</p>
+                    <p id="final-score" class="score-big">0/10</p>
+                </div>
+                <div id="result-message" class="result-message">정말 잘했어요!</div>
+                <button id="retry-btn" class="btn btn-large" onclick="startQuiz()">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
